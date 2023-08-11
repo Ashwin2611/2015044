@@ -1,0 +1,23 @@
+.container{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left:25rem;
+    height:8rem;
+    width: 50rem;
+    background-color: #e4e4e4;
+    border-radius: 25px;
+}
+.trainName
+{
+    font-size: 24px;
+    margin-left: 2rem;
+    padding-top:1rem;
+}
+.trainNubmer{
+    margin-left:2rem ;
+}
+
+.time{
+    margin-left:2rem;
+}

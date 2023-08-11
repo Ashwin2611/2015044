@@ -1,0 +1,10 @@
+.container{
+    height: 50rem;
+    width: 30rem;
+    background-color: #e4e4e4;
+    margin-left:35rem;
+    border-radius: 25px;
+}
+.Name{
+    /* margin-top:10rem; */
+}

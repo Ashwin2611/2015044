@@ -1,6 +1,7 @@
 import { createBrowserRouter,RouterProvider } from "react-router-dom";
 import ConnectingToServer from "./ConnectingToServer/ConnectingToServer";
 import TrainDetails from "./TrainDetails/TrainDetails";
+import FullDetails from "./FullDetails/FullDetails";
 
 const route = createBrowserRouter([
   {
@@ -17,6 +18,9 @@ const route = createBrowserRouter([
       {
         path:"/trainDetails",
         element:<TrainDetails/>
+      },{
+        path:'/train',
+        element:<FullDetails/>
       }
     ],
   },

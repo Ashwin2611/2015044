@@ -11,8 +11,8 @@ export default function ConnectingToServer() {
     ownerEmail: "",
     accessCode: "",
   });
-  const navigate=useNavigate();
-//  const [data,setdata]=useState("");
+  const navigate = useNavigate();
+  //  const [data,setdata]=useState("");
   function SubmitHandler(e) {
     e.preventDefault();
     const { name, value } = e.target;
@@ -24,7 +24,7 @@ export default function ConnectingToServer() {
     e.preventDefault();
     const response = await fetch("http://20.244.56.144/train/register", {
       method: "POST",
-      body: JSON.stringify( userdetails ),
+      body: JSON.stringify(userdetails),
       headers: { "Content-type": "application/json" },
     });
     const res = await response.json();
@@ -36,30 +36,34 @@ export default function ConnectingToServer() {
     }
   }
 
-  useEffect(()=>{
- async function TokenHandler(){
-  const res1=await fetch("http://20.244.56.144/train/auth",{
-    method:"POST",
-    body:JSON.stringify({companyName:"Train Centeral",clientID:"41079608-d74a-42f1-a0bc-09a583caa94c",ownerName:"Ashwin",ownerEmail:"Ashwin@gmail.com",rollNo:"2015044",clientSecret:"cPSiSYbqFbTLaNCe"}),
-    headers:{"Content-type":"application/json"}
-  })
-  const response1=await res1.json();
-  if(res1.ok)
-  {
-    console.log(response1)
-    navigate("/trainDetails",{
-        state:{
-            token:response1.access_token,
-        }
-    })
-  }
-  else
-  {
-    console.log("error",response1)
-  }
-}
-TokenHandler()
-  },[]);
+  useEffect(() => {
+    async function TokenHandler() {
+      const res1 = await fetch("http://20.244.56.144/train/auth", {
+        method: "POST",
+        body: JSON.stringify({
+          companyName: "Train Centeral",
+          clientID: "41079608-d74a-42f1-a0bc-09a583caa94c",
+          ownerName: "Ashwin",
+          ownerEmail: "Ashwin@gmail.com",
+          rollNo: "2015044",
+          clientSecret: "cPSiSYbqFbTLaNCe",
+        }),
+        headers: { "Content-type": "application/json" },
+      });
+      const response1 = await res1.json();
+      if (res1.ok) {
+        console.log(response1);
+        navigate("/trainDetails", {
+          state: {
+            token: response1.access_token,
+          },
+        });
+      } else {
+        console.log("error", response1);
+      }
+    }
+    TokenHandler();
+  }, []);
   return (
     <div className={style.container}>
       <h1 className={style.title}>Register</h1>

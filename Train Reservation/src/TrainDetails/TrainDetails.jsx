@@ -26,7 +26,7 @@ export default function TrainDetails(){
     },[])
     return(
         <div>
-            <h1>Tain details</h1>
+            <h1>Train details</h1>
             <div>
                 {trainDetails.map((train)=><Train train={train} key={train.trainName}/>)}
             </div>
